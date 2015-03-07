@@ -1,0 +1,124 @@
+- |
+  In Order to test the School in OpenERP, which allows us to manage all operations for managing schools.
+- |
+  I'm creating "Gold School" which has School fee 80 EURO and It's started from 1st June to 31st Dec.
+-
+  !record {model: product.product, id: product_product_schoolproduct0}:
+    categ_id: product.product_category_1
+    school: 1
+    school_date_from: !eval datetime.today().strftime("%Y-%m-%d")
+    school_date_to: !eval "(datetime.now() + timedelta(6*31)).strftime('%Y-%m-%d')" 
+    name: Gold School
+    type: service
+    list_price: 80.00
+
+- |
+  "Seagate" want to join "Gold School", so I'm checking  "Current School State" of "Seagate". It is an "Non Member" or not.
+-
+  !assert {model: res.partner, id: base.res_partner_19}:
+      - school_state == 'none', 'Member should be has "Current School State" in "Non Member".'
+- |
+  I'm doing to make school invoice for "Seagate" on joining "Gold School".
+-
+  !python {model: res.partner}: |
+    self.create_school_invoice(cr, uid, [ref("base.res_partner_19")], product_id=ref("product_product_schoolproduct0"), datas={"amount":80.00})
+- |
+  I'm checking  "Current School State" of "Seagate". It is an "Waiting Member" or not.
+-
+  !assert {model: res.partner, id: base.res_partner_19}:
+      - school_state == 'waiting', 'Member should be has "Current School State" in "Waiting Member".'
+- |
+  I'm Opening that Invoice which is created for "Seagate".
+-
+  !python {model: res.partner}: |
+        invoice_pool = self.pool.get('account.invoice')
+        partner_pool = self.pool.get('res.partner')
+        school_line_pool = self.pool.get('school.school_line')
+        school_pool = self.pool.get('product.product')
+
+        school_line_ids = school_line_pool.search(cr, uid, [('school_id','=',ref('product_product_schoolproduct0')),('partner','=',ref('base.res_partner_19'))])
+        school_lines = school_line_pool.browse(cr, uid, school_line_ids)
+        assert school_lines, 'School is not registrated.'
+        school_line = school_lines[0]
+        school_line.account_invoice_id.signal_workflow('invoice_open')
+
+- |
+  I'm checking "Current school state" of "Seagate". It is an "Invoiced Member" or not.
+-
+  !assert {model: res.partner, id: base.res_partner_19}:
+     - school_state == 'invoiced', 'Member should be has "Current School State" in "Invoiced Member".'
+
+- |
+  I'm creating free member "Ms. Johnson" of "Gold School".
+-
+  !record {model: res.partner, id: res_partner_msjohnson0}:
+        name: Ms. Johnson
+        city: paris
+        country_id: base.fr
+        name: Ms. Johnson
+        street: 1 rue Rockfeller
+        type: invoice
+        zip: '75016'
+        free_member: True
+
+- |
+  I'm checking "Current school state" of "Ms. Johnson". It is an "Free Member" or not.
+-
+  !assert {model: res.partner, id: res_partner_msjohnson0}:
+     - school_state == 'free', 'Member should be has "Current School State" in "Free Member".'
+
+- |
+  I'm set "Seagate" as a associated member of "Ms. Johnson" and also set Non free member.
+-
+  !python {model: res.partner}: |
+    self.write(cr, uid, [ref("res_partner_msjohnson0")], {'free_member': False, 'associate_member': ref("base.res_partner_19")})
+
+- |
+  I'm checking "Current school state" of "Ms. Johnson". It is an "Paid Member" or not.
+-
+  !assert {model: res.partner, id: res_partner_msjohnson0}:
+     - school_state == 'paid', 'Member should be has "Current School State" in "Paid Member".'
+
+- |
+  I'm creating new "Regular School" which has School fee 50 EURO and It's started from 1st June to 31st Dec.
+-
+  !record {model: product.product, id: product_product_schoolproduct1}:
+    categ_id: product.product_category_1
+    school: 1
+    school_date_from: !eval datetime.today().strftime("%Y-%m-%d")
+    school_date_to: !eval "(datetime.now() + timedelta(6*31)).strftime('%Y-%m-%d')" 
+    name: Regular School
+    type: service
+    list_price: 50.00
+- |
+  I'm making invoice of "Seagate" member on joining new school "Regular School".
+-
+  !python {model: res.partner}: |
+    self.create_school_invoice(cr, uid, [ref("base.res_partner_19")], product_id=ref("product_product_schoolproduct1"), datas={"amount":50.00})
+- |
+  I'm checking "Current school state" of "Seagate". It is an "Old Member" or not.
+-
+  !assert {model: res.partner, id: base.res_partner_19}:
+      - school_state == 'old', 'Member should be has "Current School State" in "Old Member".'
+- |
+  I'm doing to make credit note of invoice which is paid by "Seagate" to cancel school.
+-
+  !python {model: account.invoice}: |
+        invoice_pool = self.pool.get('account.invoice')
+        partner_pool = self.pool.get('res.partner')
+        school_line_pool = self.pool.get('school.school_line')
+        school_pool = self.pool.get('product.product')
+        invoice_refund_pool = self.pool.get('account.invoice.refund')
+
+        school_line_ids = school_line_pool.search(cr, uid, [('school_id','=',ref('product_product_schoolproduct0')),('partner','=',ref('base.res_partner_19'))])
+        school_lines = school_line_pool.browse(cr, uid, school_line_ids)
+        assert school_lines, 'School is not registrated.'
+        school_line = school_lines[0]
+        refund_id = invoice_refund_pool.create(cr, uid, {'description': 'Refund of School', 'filter_refund': 'refund'}, {'active_id': school_line.account_invoice_id.id})
+        invoice_refund_pool.invoice_refund(cr, uid, [refund_id], {'active_id': school_line.account_invoice_id.id, 'active_ids': [school_line.account_invoice_id.id]})
+- |
+  I'm checking "Current school state" of "Seagate". It is an "Cancelled Member" or not.
+-
+  !assert {model: res.partner, id: base.res_partner_19}:
+      - school_state == 'canceled', 'Member should be has "Current School State" in "Cancelled Member".'
+

@@ -1,0 +1,654 @@
+# French translation for openobject-addons
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-01-21 14:08+0000\n"
+"PO-Revision-Date: 2014-08-14 16:10+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-01-22 07:55+0000\n"
+"X-Generator: Launchpad (build 17306)\n"
+
+#. module: school
+#: field:report.school,num_invoiced:0
+msgid "# Invoiced"
+msgstr "Nb. Facturés"
+
+#. module: school
+#: field:report.school,num_paid:0
+msgid "# Paid"
+msgstr "Nb. payant"
+
+#. module: school
+#: field:report.school,num_waiting:0
+msgid "# Waiting"
+msgstr "Nb. en attente"
+
+#. module: school
+#: help:res.partner,associate_member:0
+msgid ""
+"A member with whom you want to associate your school.It will consider "
+"the school state of the associated member."
+msgstr ""
+"Un membre auquel vous voulez associer votre adhésion. Cela prendra en compte "
+"l'état de l'adhésion du membre associé."
+
+#. module: school
+#: field:school.school_line,account_invoice_line:0
+msgid "Account Invoice line"
+msgstr "Ligne de Facture"
+
+#. module: school
+#: view:product.template:school.school_products_form
+msgid "Add a description..."
+msgstr "Ajouter une description…"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "All Members"
+msgstr "Tous les membres"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "All non Members"
+msgstr "Tous les non-membres"
+
+#. module: school
+#: help:school.school_line,member_price:0
+msgid "Amount for the school"
+msgstr "Total pour l'adhésion"
+
+#. module: school
+#: field:report.school,associate_member_id:0
+#: view:res.partner:school.view_res_partner_member_filter
+#: field:res.partner,associate_member:0
+msgid "Associate Member"
+msgstr "Membre associé"
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+msgid "Associated Partner"
+msgstr "Partenaire associé"
+
+#. module: school
+#: model:product.template,name:school.school_2_product_template
+msgid "Basic School"
+msgstr "Adhésion de base"
+
+#. module: school
+#: view:res.partner:school.view_partner_form
+msgid "Buy School"
+msgstr "Payer une cotisation"
+
+#. module: school
+#: view:school.invoice:school.view_school_invoice_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: school
+#: field:res.partner,school_cancel:0
+msgid "Cancel School Date"
+msgstr "Date d'annulation de l'adhésion"
+
+#. module: school
+#: field:school.school_line,date_cancel:0
+msgid "Cancel date"
+msgstr "Date d'annulation"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: selection:res.partner,school_state:0
+msgid "Cancelled Member"
+msgstr "Adhésion annulée"
+
+#. module: school
+#: view:product.template:school.school_product_search_form_view
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: school
+#: help:product.template,school:0
+msgid "Check if the product is eligible for school."
+msgstr "Cochez si l'article est éligible pour l'adhésion"
+
+#. module: school
+#: field:school.school_line,company_id:0
+#: view:report.school:school.view_report_school_search
+#: field:report.school,company_id:0
+msgid "Company"
+msgstr "Société"
+
+#. module: school
+#: view:res.partner:school.view_partner_tree
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: school
+#: field:school.invoice,create_uid:0
+#: field:school.school_line,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: school
+#: field:school.invoice,create_date:0
+#: field:school.school_line,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+#: field:report.school,school_state:0
+msgid "Current School State"
+msgstr "État actuel de l'adhésion"
+
+#. module: school
+#: field:res.partner,school_state:0
+msgid "Current School Status"
+msgstr "État actuel de l'adhésion"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Customer Partners"
+msgstr "Partenaires clients"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Customers"
+msgstr "Clients"
+
+#. module: school
+#: help:product.template,school_date_from:0
+#: help:res.partner,school_start:0
+msgid "Date from which school becomes active."
+msgstr "Date à partir de laquelle l'adhésion devient active."
+
+#. module: school
+#: help:school.school_line,date:0
+msgid "Date on which member has joined the school"
+msgstr "Date à laquelle l'adhésion du membre a été effective."
+
+#. module: school
+#: help:res.partner,school_cancel:0
+msgid "Date on which school has been cancelled"
+msgstr "Date à laquelle l'adhésion a été annulée"
+
+#. module: school
+#: help:product.template,school_date_to:0
+#: help:res.partner,school_stop:0
+msgid "Date until which school remains active."
+msgstr "Date jusqu'à laquelle l'adhésion reste active."
+
+#. module: school
+#: field:report.school,tot_earned:0
+msgid "Earned Amount"
+msgstr "Montant récolté"
+
+#. module: school
+#: field:report.school,date_to:0
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "End School Date"
+msgstr "Date de fin d'adhésion"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "End Month"
+msgstr ""
+
+#. module: school
+#: help:report.school,date_to:0
+msgid "End school date"
+msgstr "Date de fin de l'adhésion"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Ending Month Of School"
+msgstr ""
+
+#. module: school
+#: sql_constraint:product.template:0
+msgid "Error ! Ending Date cannot be set before Beginning Date."
+msgstr ""
+"Erreur ! La Date de Fin ne peut pas être définit avant la Date de Début."
+
+#. module: school
+#: constraint:res.partner:0
+msgid "Error ! You cannot create recursive associated members."
+msgstr ""
+"Erreur ! Vous ne pouvez pas créer des membres associés de manière récursive."
+
+#. module: school
+#: code:addons/school/school.py:402
+#: code:addons/school/school.py:405
+#, python-format
+msgid "Error!"
+msgstr "Erreur!"
+
+#. module: school
+#: constraint:school.school_line:0
+msgid "Error, this school product is out of date"
+msgstr "Erreur, cet article d'adhésion est obsolète"
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+msgid "Forecast"
+msgstr "Prévisions"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: field:res.partner,free_member:0
+#: selection:res.partner,school_state:0
+msgid "Free Member"
+msgstr "Membre Libre"
+
+#. module: school
+#: field:school.school_line,date_from:0
+msgid "From"
+msgstr "De"
+
+#. module: school
+#: view:product.template:school.school_product_search_form_view
+msgid "From Month"
+msgstr ""
+
+#. module: school
+#: model:product.template,name:school.school_0_product_template
+msgid "Gold School"
+msgstr ""
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Group By"
+msgstr ""
+
+#. module: school
+#: view:product.template:school.school_product_search_form_view
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: school
+#: field:school.invoice,id:0
+#: field:school.school_line,id:0
+#: field:report.school,id:0
+msgid "ID"
+msgstr ""
+
+#. module: school
+#: view:product.template:school.school_product_search_form_view
+msgid "Inactive"
+msgstr "Inactif"
+
+#. module: school
+#: model:ir.model,name:school.model_account_invoice
+#: field:school.school_line,account_invoice_id:0
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: school
+#: model:ir.model,name:school.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Ligne de facuration"
+
+#. module: school
+#: model:ir.actions.act_window,name:school.action_school_invoice_view
+#: view:school.invoice:school.view_school_invoice_view
+msgid "Invoice School"
+msgstr "Facture d'adhésion"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: selection:res.partner,school_state:0
+msgid "Invoiced Member"
+msgstr "Membre Facturé"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Invoiced/Paid/Free"
+msgstr "Facturé/Payé/Gratuit"
+
+#. module: school
+#: help:res.partner,school_state:0
+msgid ""
+"It indicates the school state.\n"
+"-Non Member: A partner who has not applied for any school.\n"
+"-Cancelled Member: A member who has cancelled his school.\n"
+"-Old Member: A member whose school date has expired.\n"
+"-Waiting Member: A member who has applied for the school and whose "
+"invoice is going to be created.\n"
+"-Invoiced Member: A member whose invoice has been created.\n"
+"-Paying member: A member who has paid the school fee."
+msgstr ""
+
+#. module: school
+#: help:school.school_line,state:0
+msgid ""
+"It indicates the school status.\n"
+"                        -Non Member: A member who has not applied for any "
+"school.\n"
+"                        -Cancelled Member: A member who has cancelled his "
+"school.\n"
+"                        -Old Member: A member whose school date has "
+"expired.\n"
+"                        -Waiting Member: A member who has applied for the "
+"school and whose invoice is going to be created.\n"
+"                        -Invoiced Member: A member whose invoice has been "
+"created.\n"
+"                        -Paid Member: A member who has paid the school "
+"amount."
+msgstr ""
+"Cela indique l'état de l'adhésion.\n"
+"                      -Non Membre: Un partenaire qui n'a jamais adhéré.\n"
+"                      -Adhésion annulée: Un membre qui a annulé son "
+"adhésion.\n"
+"                      -Ancien Membre: Un membre dont la date d'adhésion a "
+"expirée.\n"
+"                      -Membre en attente: Un membre qui a demandé son "
+"adhésion et dont la facture va être créée.\n"
+"                      -Membre facturé: Un membre dont la facture a été "
+"créée.\n"
+"                      -Membre payé: Un membre qui a payé son adhésion."
+
+#. module: school
+#: field:school.school_line,date:0
+msgid "Join Date"
+msgstr "Date d'adhésion"
+
+#. module: school
+#: field:school.invoice,write_uid:0
+#: field:school.school_line,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: school
+#: field:school.invoice,write_date:0
+#: field:school.school_line,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: school
+#: field:report.school,partner_id:0
+msgid "Member"
+msgstr "Cotisant"
+
+#. module: school
+#: field:school.invoice,member_price:0
+msgid "Member Price"
+msgstr "Prix Membre"
+
+#. module: school
+#: model:ir.model,name:school.model_school_school_line
+msgid "Member line"
+msgstr "Ligne de Membres"
+
+#. module: school
+#: model:ir.actions.act_window,name:school.action_school_members
+#: model:ir.ui.menu,name:school.menu_members
+#: model:ir.ui.menu,name:school.menu_school
+#: view:res.partner:school.school_members_tree
+msgid "Members"
+msgstr "Membres"
+
+#. module: school
+#: model:ir.actions.act_window,name:school.action_report_school_tree
+#: model:ir.ui.menu,name:school.menu_report_school
+msgid "Members Analysis"
+msgstr "Analyse des membres"
+
+#. module: school
+#: field:school.invoice,product_id:0
+#: field:school.school_line,school_id:0
+#: field:product.template,school:0
+#: view:report.school:school.view_report_school_graph1
+#: view:report.school:school.view_report_school_search
+#: view:res.partner:school.view_partner_form
+#: field:res.partner,member_lines:0
+msgid "School"
+msgstr "Cotisation"
+
+#. module: school
+#: field:res.partner,school_amount:0
+msgid "School Amount"
+msgstr "Montant de l'Adhésion"
+
+#. module: school
+#: model:ir.model,name:school.model_report_school
+msgid "School Analysis"
+msgstr "Analyse des adhésions"
+
+#. module: school
+#: view:product.template:school.school_products_form
+msgid "School Duration"
+msgstr "Durée d'Adhésion"
+
+#. module: school
+#: field:product.template,school_date_to:0
+#: field:res.partner,school_stop:0
+msgid "School End Date"
+msgstr "Date de fin d'adhésion"
+
+#. module: school
+#: field:school.school_line,member_price:0
+#: view:product.template:school.school_products_form
+#: view:product.template:school.school_products_tree
+msgid "School Fee"
+msgstr "Frais d'adhésion"
+
+#. module: school
+#: model:ir.model,name:school.model_school_invoice
+#: view:school.invoice:school.view_school_invoice_view
+msgid "School Invoice"
+msgstr "Facture de l'adhésion"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "School Partners"
+msgstr "Adhésion"
+
+#. module: school
+#: view:product.template:school.school_product_search_form_view
+#: view:report.school:school.view_report_school_search
+#: field:report.school,school_id:0
+msgid "School Product"
+msgstr "Article pour l'adhésion"
+
+#. module: school
+#: model:ir.actions.act_window,name:school.action_school_products
+#: model:ir.ui.menu,name:school.menu_school_products
+#: view:product.template:school.school_product_search_form_view
+msgid "School Products"
+msgstr "Articles d'adhésion"
+
+#. module: school
+#: field:product.template,school_date_from:0
+#: field:res.partner,school_start:0
+msgid "School Start Date"
+msgstr "Date de Début d'Adhésion"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "School State"
+msgstr "Etat de l'adhésion"
+
+#. module: school
+#: field:school.school_line,state:0
+msgid "School Status"
+msgstr "État de l'adhésion"
+
+#. module: school
+#: view:product.template:school.school_products_form
+#: view:product.template:school.school_products_tree
+msgid "School products"
+msgstr "Articles d'adhésion"
+
+#. module: school
+#: view:res.partner:school.view_partner_form
+msgid "Schools"
+msgstr "Adhésions"
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+msgid "Month"
+msgstr "Mois"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: selection:res.partner,school_state:0
+msgid "Non Member"
+msgstr "Non membre"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "None/Canceled/Old/Waiting"
+msgstr "Aucune/Annulée/Ancienne/En attente"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: selection:res.partner,school_state:0
+msgid "Old Member"
+msgstr "Ancien Membre"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: selection:res.partner,school_state:0
+msgid "Paid Member"
+msgstr "Membre payant"
+
+#. module: school
+#: model:ir.model,name:school.model_res_partner
+#: field:school.school_line,partner:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: school
+#: code:addons/school/school.py:406
+#, python-format
+msgid "Partner doesn't have an address to make the invoice."
+msgstr "Le partenaire n'a pas d'adresse pour établir la facture."
+
+#. module: school
+#: code:addons/school/school.py:403
+#, python-format
+msgid "Partner is a free Member."
+msgstr "Le partenaire est membre gratuitement."
+
+#. module: school
+#: field:report.school,tot_pending:0
+msgid "Pending Amount"
+msgstr "Montant en attente"
+
+#. module: school
+#: model:ir.model,name:school.model_product_template
+msgid "Product Template"
+msgstr "Modèle de produit"
+
+#. module: school
+#: field:report.school,quantity:0
+msgid "Quantity"
+msgstr ""
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+msgid "Revenue Done"
+msgstr "Revenu final"
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+#: field:report.school,user_id:0
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Salesperson"
+msgstr "Vendeur"
+
+#. module: school
+#: help:res.partner,free_member:0
+msgid "Select if you want to give free school."
+msgstr "Sélectionner si vous voulez donner une adhésion gratuite."
+
+#. module: school
+#: model:product.template,name:school.school_1_product_template
+msgid "Silver School"
+msgstr "Adhésion Argent"
+
+#. module: school
+#: field:report.school,start_date:0
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Start Month"
+msgstr ""
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Starting Month Of School"
+msgstr ""
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Supplier Partners"
+msgstr "Partenaires fournisseurs"
+
+#. module: school
+#: view:res.partner:school.view_res_partner_member_filter
+msgid "Suppliers"
+msgstr "Fournisseurs"
+
+#. module: school
+#: view:product.template:school.school_products_form
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: school
+#: help:res.partner,school_amount:0
+msgid "The price negotiated by the partner"
+msgstr "Prix négocié par le partenaire"
+
+#. module: school
+#: view:product.template:school.school_products_form
+msgid "This note will be displayed on quotations..."
+msgstr "Cette note sera affichée sur les devis..."
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+msgid "This will display paid, old and total earned columns"
+msgstr "Ceci va afficher les colonnes payé, ancien, et totalement gagné"
+
+#. module: school
+#: view:report.school:school.view_report_school_search
+msgid "This will display waiting, invoiced and total pending columns"
+msgstr "Ceci va afficher les colonnes en attente, facturées, et totales"
+
+#. module: school
+#: field:school.school_line,date_to:0
+msgid "To"
+msgstr "À"
+
+#. module: school
+#: selection:school.school_line,state:0
+#: selection:report.school,school_state:0
+#: selection:res.partner,school_state:0
+msgid "Waiting Member"
+msgstr "Membre en attente"
+
+#. module: school
+#: view:school.invoice:school.view_school_invoice_view
+msgid "or"
+msgstr "ou"

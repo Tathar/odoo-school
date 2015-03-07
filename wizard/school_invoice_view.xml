@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_school_invoice_view" model="ir.ui.view">
+            <field name="name">school.invoice.view.form</field>
+            <field name="model">school.invoice</field>
+            <field name="arch" type="xml">
+                <form string="school Invoice">
+                    <group>
+                        <field name="product_id" domain="[('school','=',True)]" widget="selection" on_change="onchange_product(product_id)"/>
+                        <field name="member_price"/>
+                    </group>
+                    <footer>
+                        <button string="Invoice school" name="school_invoice" type="object" class="oe_highlight"  />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_school_invoice_view" model="ir.actions.act_window">
+            <field name="name">Join school</field>
+            <field name="res_model">school.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_school_invoice_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <act_window name="Invoice school"
+            res_model="school.invoice"
+            src_model="res.partner"
+            multi="True"
+            key2="client_action_multi"
+            view_mode="form"
+            id="action_school_invoice_view"/>
+
+    </data>
+</openerp>

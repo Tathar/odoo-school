@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+<!-- Demo Data for Schools  -->
+    <record id="school_0" model="product.product">
+        <field name="school">True</field>
+        <field eval="time.strftime('%Y-01-01')" name="school_date_from"/>
+        <field eval="time.strftime('%Y-12-31')" name="school_date_to"/>
+        <field name="name">Gold School</field>
+        <field name="list_price">180</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="type">service</field>
+        <field name="image" type="base64" file="school/static/img/school_0-image.jpg"/>
+    </record>
+    <record id="school_1" model="product.product">
+        <field name="school">True</field>
+        <field eval="time.strftime('%Y-01-01')" name="school_date_from"/>
+        <field eval="time.strftime('%Y-12-31')" name="school_date_to"/>
+        <field name="name">Silver School</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="list_price">80</field>
+        <field name="type">service</field>
+        <field name="image" type="base64" file="school/static/img/school_1-image.jpg"/>
+    </record>
+    <record id="school_2" model="product.product">
+        <field name="school">True</field>
+        <field eval="time.strftime('%Y-01-01')" name="school_date_from"/>
+        <field eval="time.strftime('%Y-12-31')" name="school_date_to"/>
+        <field name="name">Basic School</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="list_price">40</field>
+        <field name="type">service</field>
+        <field name="image" type="base64" file="school/static/img/school_2-image.jpg"/>
+    </record>
+
+    <!-- Join Schools  -->
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_2'), ref('school_0'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_10'), ref('school_0'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_12'), ref('school_0'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_13'), ref('school_0'), {'amount':180})"/>
+
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_18'), ref('school_1'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_21'), ref('school_1'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_22'), ref('school_1'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_23'), ref('school_1'), {'amount':180})"/>
+
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_9'), ref('school_2'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_11'), ref('school_2'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_5'), ref('school_2'), {'amount':180})"/>
+    <function model="res.partner" name="create_school_invoice" eval="(ref('base.res_partner_3'), ref('school_2'), {'amount':180})"/>
+
+    <!-- Demo data for free member -->
+    <record id="base.res_partner_18" model="res.partner">
+        <field name="free_member">True</field>
+    </record>
+    <record id="base.res_partner_7" model="res.partner">
+        <field name="free_member">True</field>
+    </record>
+    <record id="base.res_partner_9" model="res.partner">
+        <field name="free_member">True</field>
+    </record>
+    <record id="base.res_partner_26" model="res.partner">
+        <field name="free_member">True</field>
+    </record>
+
+    <!-- Demo data for associate member -->
+    <record id="base.res_partner_12" model="res.partner">
+        <field name="associate_member" ref="base.res_partner_2"/>
+    </record>
+    <record id="base.res_partner_8" model="res.partner">
+        <field name="associate_member" ref="base.res_partner_2"/>
+    </record>
+    <record id="base.res_partner_3" model="res.partner">
+        <field name="associate_member" ref="base.res_partner_2"/>
+    </record>
+    <record id="base.res_partner_4" model="res.partner">
+        <field name="associate_member" ref="base.res_partner_2"/>
+    </record>
+    <record id="base.res_partner_17" model="res.partner">
+        <field name="associate_member" ref="base.res_partner_2"/>
+    </record>
+    </data>
+</openerp>
