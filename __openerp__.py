@@ -30,7 +30,7 @@ This module allows you to manage all operations for managing school.
 
     """,
     'author': 'Pierre Emmanuel DOUET (Tathar)',
-    'depends': ['base', 'product', 'account'],
+    'depends': ['base', 'product', 'account', 'membership'],
     'data': [
         'security/ir.model.access.csv',
         'wizard/school_invoice_view.xml',
@@ -42,7 +42,7 @@ This module allows you to manage all operations for managing school.
         'school_demo.yml'
     ],
     'website': 'https://www.odoo.com/page/community-builder',
-    'test': ['test/test_subscription.yml'],
+    'test': ['test/test_school.yml'],
     'installable': True,
     'auto_install': False,
 }

@@ -224,7 +224,7 @@
         <record model="ir.ui.view" id="view_partner_form">
             <field name="name">res.partner.form.inherit</field>
             <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="inherit_id" ref="membership.view_partner_form"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="School">
