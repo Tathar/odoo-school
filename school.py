@@ -48,7 +48,7 @@ STATE_PRIOR = {
 class school_line(osv.osv):
     '''Member line'''
 
-    def _get_partners(self, cr, uid, ids, context=None):
+    def _get_partners_school(self, cr, uid, ids, context=None):
         list_school_line = []
         member_line_obj = self.pool.get('school.school_line')
         for partner in self.pool.get('res.partner').browse(cr, uid, ids, context=context):
@@ -153,7 +153,7 @@ class school_line(osv.osv):
                         string='School Status', type='selection',
                         selection=STATE, store = {
                         'account.invoice': (_get_school_lines, ['state'], 10),
-                        'res.partner': (_get_partners, ['school_state'], 12),
+                        'res.partner': (_get_partners_school, ['school_state'], 12),
                         }, help="""It indicates the school status.
                         -Non Member: A member who has not applied for any school.
                         -Cancelled Member: A member who has cancelled his school.
@@ -175,7 +175,7 @@ class Partner(osv.osv):
     '''Partner'''
     _inherit = 'res.partner'
  
-    def _get_partner_id(self, cr, uid, ids, context=None):
+    def _get_partner_school_id(self, cr, uid, ids, context=None):
         member_line_obj = self.pool.get('school.school_line')
         res_obj =  self.pool.get('res.partner')
         data_inv = member_line_obj.browse(cr, uid, ids, context=context)
@@ -188,7 +188,7 @@ class Partner(osv.osv):
             list_partner += ids2
         return list_partner
  
-    def _get_invoice_partner(self, cr, uid, ids, context=None):
+    def _get_invoice_school_partner(self, cr, uid, ids, context=None):
         inv_obj = self.pool.get('account.invoice')
         res_obj = self.pool.get('res.partner')
         data_inv = inv_obj.browse(cr, uid, ids, context=context)
@@ -303,7 +303,7 @@ class Partner(osv.osv):
                         res[partner.id]['school_cancel'] = member_line_obj.read(cr, uid, [line_id2[0]], ['date_cancel'], context=context)[0]['date_cancel']
         return res
  
-    def _get_partners(self, cr, uid, ids, context=None):
+    def _get_partners_school(self, cr, uid, ids, context=None):
         ids2 = ids
         while ids2:
             ids2 = self.search(cr, uid, [('associate_member', 'in', ids2)], context=context)
@@ -325,9 +325,9 @@ class Partner(osv.osv):
                     string = 'Current School Status', type = 'selection',
                     selection = STATE,
                     store = {
-                        'account.invoice': (_get_invoice_partner, ['state'], 10),
-                        'school.school_line': (_get_partner_id, ['state'], 10),
-                        'res.partner': (_get_partners, ['free_member', 'school_state', 'associate_member'], 10)
+                        'account.invoice': (_get_invoice_school_partner, ['state'], 10),
+                        'school.school_line': (_get_partner_school_id, ['state'], 10),
+                        'res.partner': (_get_partners_school, ['free_member', 'school_state', 'associate_member'], 10)
                     }, help='It indicates the school state.\n'
                             '-Non Member: A partner who has not applied for any school.\n'
                             '-Cancelled Member: A member who has cancelled his school.\n'
@@ -339,24 +339,24 @@ class Partner(osv.osv):
                     _school_date, multi = 'membeship_start',
                     string = 'School Start Date', type = 'date',
                     store = {
-                        'account.invoice': (_get_invoice_partner, ['state'], 10),
-                        'school.school_line': (_get_partner_id, ['state'], 10, ),
+                        'account.invoice': (_get_invoice_school_partner, ['state'], 10),
+                        'school.school_line': (_get_partner_school_id, ['state'], 10, ),
                         'res.partner': (lambda self, cr, uid, ids, c={}: ids, ['free_member'], 10)
                     }, help="Date from which school becomes active."),
         'school_stop': fields.function(
                     _school_date,
                     string = 'School End Date', type='date', multi='school_stop',
                     store = {
-                        'account.invoice': (_get_invoice_partner, ['state'], 10),
-                        'school.school_line': (_get_partner_id, ['state'], 10),
+                        'account.invoice': (_get_invoice_school_partner, ['state'], 10),
+                        'school.school_line': (_get_partner_school_id, ['state'], 10),
                         'res.partner': (lambda self, cr, uid, ids, c={}: ids, ['free_member'], 10)
                     }, help="Date until which school remains active."),
         'school_cancel': fields.function(
                     _school_date,
                     string = 'Cancel School Date', type='date', multi='school_cancel',
                     store = {
-                        'account.invoice': (_get_invoice_partner, ['state'], 11),
-                        'school.school_line': (_get_partner_id, ['state'], 10),
+                        'account.invoice': (_get_invoice_school_partner, ['state'], 11),
+                        'school.school_line': (_get_partner_school_id, ['state'], 10),
                         'res.partner': (lambda self, cr, uid, ids, c={}: ids, ['free_member'], 10)
                     }, help="Date on which school has been cancelled"),
     }
@@ -365,7 +365,7 @@ class Partner(osv.osv):
         'school_cancel': False,
     }
  
-    def _check_recursion(self, cr, uid, ids, context=None):
+    def _check_recursion_school(self, cr, uid, ids, context=None):
         """Check  Recursive  for Associated Members.
         """
         level = 100
@@ -378,7 +378,7 @@ class Partner(osv.osv):
         return True
  
     _constraints = [
-        (_check_recursion, 'Error ! You cannot create recursive associated members.', ['associate_member'])
+        (_check_recursion_school, 'Error ! You cannot create recursive associated members.', ['associate_member'])
     ]
  
     def create_school_invoice(self, cr, uid, ids, product_id=None, datas=None, context=None):
