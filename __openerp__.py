@@ -38,11 +38,11 @@ This module allows you to manage all operations for managing school.
 #        'report/report_school_view.xml',
     ],
     'demo': [
-        'school_demo.xml',
-        'school_demo.yml'
+#        'school_demo.xml',
+#        'school_demo.yml'
     ],
     'website': 'https://www.odoo.com/page/community-builder',
-    'test': ['test/test_school.yml'],
+#    'test': ['test/test_school.yml'],
     'installable': True,
     'auto_install': False,
 }
