@@ -32,10 +32,10 @@ This module allows you to manage all operations for managing school.
     'author': 'Pierre Emmanuel DOUET (Tathar)',
     'depends': ['base', 'product', 'account', 'membership'],
     'data': [
-        'security/ir.model.access.csv',
-        'wizard/school_invoice_view.xml',
-        'school_view.xml',
-        'report/report_school_view.xml',
+#        'security/ir.model.access.csv',
+#        'wizard/school_invoice_view.xml',
+#        'school_view.xml',
+#        'report/report_school_view.xml',
     ],
     'demo': [
         'school_demo.xml',
